@@ -14,7 +14,7 @@ Sites to check defined in file default.conf, line:
 
 `local hosts = json.decode('{"vkkp-google":"http://google.com", "sber":"http://sberbank.ru", "localhost": "http://127.0.0.1"}')`
 
-HTTPS is not supported. Primary use case is to check microservices in Kubernetes for external load balancer.
+Primary use case is to check microservices in Kubernetes for external load balancer.
 
 Use additional LUA libraries:
 
