@@ -5,9 +5,9 @@ Use openresty nginx for simple healthchek for multiple sites
 ## Run in docker example
 
 ```bash
-docker run -d --name nginx --rm -p 8080:80 -v $PWD/conf.d:/etc/nginx/conf.d openresty/openresty:1.21.4.1-0-bullseye-fat
+docker run -d --name nginx --rm -p 8080:80 -v $PWD/conf.d:/etc/nginx/conf.d fabiocicerchia/nginx-lua:1.27-debian
 curl http://localhost:8080/healthcheck-targets
-curl http://localhost:8080/healthcheck
+curl -w "%{http_code}" http://localhost:8080/healthcheck
 docker stop nginx
 ```
 
@@ -17,5 +17,4 @@ Primary use case is to check microservices in Kubernetes for an external load ba
 
 Use additional LUA libraries:
 
-* https://github.com/rxi/json.lua
 * https://github.com/ledgetech/lua-resty-http
