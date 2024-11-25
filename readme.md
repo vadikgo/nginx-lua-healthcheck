@@ -1,6 +1,6 @@
 # Nginx based healthcheck for external services
 
-Use openresty nginx for simple healthchek for multiple sites
+Use LUA nginx for a simple healthchek for multiple sites
 
 ## Run in docker example
 
