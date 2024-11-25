@@ -6,15 +6,14 @@ Use openresty nginx for simple healthchek for multiple sites
 
 ```bash
 docker run -d --name nginx --rm -p 8080:80 -v $PWD/conf.d:/etc/nginx/conf.d openresty/openresty:1.21.4.1-0-bullseye-fat
-curl -v http://localhost:8080/healthcheck
+curl http://localhost:8080/healthcheck-targets
+curl http://localhost:8080/healthcheck
 docker stop nginx
 ```
 
-Sites to check defined in file default.conf, line:
+Sites to check is defined in location /healthcheck-targets as json.
 
-`local hosts = json.decode('{"vkkp-google":"http://google.com", "sber":"http://sberbank.ru", "localhost": "http://127.0.0.1"}')`
-
-Primary use case is to check microservices in Kubernetes for external load balancer.
+Primary use case is to check microservices in Kubernetes for an external load balancer.
 
 Use additional LUA libraries:
 
