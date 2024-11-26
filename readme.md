@@ -16,6 +16,7 @@ Sites to check is defined in location /healthcheck-targets as json.
 
 Primary use case is to check microservices in Kubernetes for an external load balancer.
 
-Use additional LUA libraries:
+Use additional LUA libraries (git subtree add --prefix lua-libs/xxxx git@github.com:yyyy/xxxx.git master --squash):
 
 * https://github.com/ledgetech/lua-resty-http
+* https://github.com/fffonion/lua-resty-openssl
